@@ -1,0 +1,27 @@
+body {
+  background: #f7f8fa;
+}
+
+.card {
+  border: none;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-success {
+  background-color: #16a34a !important;
+  border: none;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+select.form-select {
+  border-radius: 8px;
+}
+
+input.form-control {
+  border-radius: 8px;
+}

@@ -1,0 +1,29 @@
+body {
+  background: #f7f8fa;
+}
+
+.card {
+  border: none;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  font-size: 0.8rem;
+}
+
+.bg-success-subtle {
+  background-color: #e7f9ed !important;
+  color: #198754 !important;
+}
+
+.bg-warning-subtle {
+  background-color: #fff8e1 !important;
+  color: #b58105 !important;
+}
+
+.bg-danger-subtle {
+  background-color: #fdeaea !important;
+  color: #dc3545 !important;
+}

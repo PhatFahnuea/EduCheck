@@ -1,0 +1,132 @@
+/* Container */
+.checkin-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #f5f4f1;
+  padding: 24px;
+}
+
+/* Card */
+.checkin-card {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Title */
+.checkin-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* Meta row */
+.checkin-metaRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.checkin-meta {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.checkin-metaLabel {
+  font-size: 12px;
+  color: #666;
+}
+
+.checkin-metaValue {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.checkin-success { color: #1b5e20; }
+.checkin-danger  { color: #b3261e; }
+
+/* Form */
+.checkin-form {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.checkin-label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.checkin-input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  font-size: 16px;
+  outline: none;
+  background: #fff;
+}
+
+.checkin-input--readonly {
+  background: #f6f6f6;
+}
+
+/* Buttons */
+.checkin-btn {
+  margin-top: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #1f72ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.checkin-btn.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.checkin-errorBox {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #d32f2f;
+  background: #fdecea;
+  color: #b3261e;
+  border-radius: 12px;
+}
+
+.checkin-successBox {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid #2e7d32;
+  background: #e8f5e9;
+  color: #1b5e20;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.checkin-errorText {
+  color: #b3261e;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Responsive tweak */
+@media (max-width: 480px) {
+  .checkin-card { padding: 18px; border-radius: 14px; }
+  .checkin-metaRow { grid-template-columns: 1fr; gap: 10px; }
+  .checkin-title { font-size: 20px; }
+}

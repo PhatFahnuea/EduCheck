@@ -1,0 +1,233 @@
+
+:root{
+  --bg:        #f5f6f8;
+  --paper:     #ffffff;
+  --ink:       #1f2937;    /* เทาเข้มอ่านง่าย */
+  --muted:     #6b7280;    /* เทากลาง */
+  --border:    #e5e7eb;    /* เส้นขอบบาง */
+  --primary:   #1d4ed8;    /* Academic Blue */
+  --primary-50:#eff6ff;
+  --primary-100:#dbeafe;
+  --primary-200:#bfdbfe;
+  --accent:    #0ea5e9;    /* ฟ้าเสริม */
+  --success:   #16a34a;
+  --warning:   #f59e0b;
+  --danger:    #dc2626;
+  --radius:    14px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 6px 14px rgba(2,6,23,.06);
+  --ring:      0 0 0 3px rgba(29,78,216,.18);
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", "Noto Sans Thai", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Selection */
+::selection{ background: var(--primary-200); }
+
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  gap: 0;
+}
+
+/* Sidebar */
+.sidebar{
+  position: sticky;
+  top: 56px;
+  height: calc(100vh - 56px);
+  overflow: auto;
+  background: var(--paper);
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  padding: 16px;
+}
+
+/* Nav in sidebar */
+.sidebar .nav{
+  gap: .25rem;
+}
+.sidebar .nav-link{
+  color: var(--ink);
+  border-radius: .75rem;
+  padding: .55rem .75rem;
+  display: flex;
+  align-items: center;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease;
+}
+.sidebar .nav-link:hover{
+  background: var(--primary-50);
+  color: var(--primary);
+}
+.sidebar .nav-link.active{
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar .nav-link:focus-visible{
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* Content */
+.content-wrap{
+  padding: 20px 24px 28px;
+}
+
+/* กล่องเนื้อหาสีขาวหลัก (ถ้ามี) */
+.content-inner{
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+}
+
+/* =========================
+   Cards / Stats
+   ========================= */
+.stat-card{
+  background: linear-gradient(180deg, var(--primary-100), var(--primary-200));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  height: 120px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  box-shadow: var(--shadow-md);
+}
+.stat-card .label{ font-size: .9rem; color: var(--muted); }
+.stat-card .value{ font-size: 1.75rem; font-weight: 700; color: #0f172a; }
+
+/* =========================
+   Buttons
+   ========================= */
+.btn{
+  border-radius: 10px;
+  padding: .55rem .9rem;
+  border: 1px solid transparent;
+  transition: transform .05s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease;
+}
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover{ background: #1847c8; }
+.btn-primary:focus-visible{ outline: none; box-shadow: var(--ring); }
+
+.btn-lightblue{
+  background: var(--primary-200);
+  color: #0f172a;
+  border-color: var(--primary-200);
+}
+.btn-lightblue:hover{
+  background: var(--primary-100);
+  color: var(--primary);
+}
+.btn-edit{
+  background: #fff;
+  border: 2px solid var(--primary-200);
+  color: var(--ink);
+}
+.btn-edit:hover{
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* =========================
+   Tables (การศึกษา)
+   ========================= */
+.table{
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.table thead th{
+  background: var(--primary-50);
+  color: #0f172a;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+.table tbody tr{
+  transition: background-color .15s ease;
+}
+.table tbody tr:hover{
+  background: #fafafa;
+}
+
+/* =========================
+   Forms
+   ========================= */
+.form-control, .form-select{
+  border-radius: 10px !important;
+  border: 1px solid var(--border) !important;
+  padding: .6rem .8rem !important;
+  box-shadow: none !important;
+}
+.form-control:focus, .form-select:focus{
+  border-color: var(--primary) !important;
+  box-shadow: var(--ring) !important;
+}
+.form-label{ color: var(--muted); font-weight: 600; }
+
+/* =========================
+   Utilities
+   ========================= */
+.card{
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.hr{ border-color: var(--border); }
+
+/* Scrollbar (เฉพาะ WebKit) */
+.sidebar::-webkit-scrollbar,
+.content-wrap::-webkit-scrollbar{ width: 10px; }
+.sidebar::-webkit-scrollbar-thumb,
+.content-wrap::-webkit-scrollbar-thumb{
+  background: #e6e9f1;
+  border-radius: 8px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content-wrap::-webkit-scrollbar-thumb:hover{
+  background: #d2d7e3;
+}
+
+/* =========================
+   Responsive / Off-canvas
+   ========================= */
+@media (max-width: 991.98px){
+  .layout{
+    grid-template-columns: 1fr;
+  }
+  .sidebar{
+    position: fixed;
+    top: 56px;
+    left: -260px;
+    width: 260px;
+    height: calc(100vh - 56px);
+    z-index: 1040;
+    transition: left .25s ease;
+  }
+  .sidebar.show{ left: 0; }
+  .content-wrap{ padding: 16px 16px 24px; }
+}
+
+/* ลด motion สำหรับผู้ใช้ที่ตั้งค่า */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
